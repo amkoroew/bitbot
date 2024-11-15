@@ -1,7 +1,7 @@
-﻿using System.Text.Json;
+using System.Text.Json;
 using Newtonsoft.Json;
-using PlayerDotNet.Logic;
-using PlayerDotNet.Models;
+using Player.Logic;
+using Player.Models;
 
 var app = WebApplication.Create(args);
 

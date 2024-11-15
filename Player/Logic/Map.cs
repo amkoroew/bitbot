@@ -1,6 +1,6 @@
-using PlayerDotNet.Models;
+using Player.Models;
 
-namespace PlayerDotNet.Logic;
+namespace Player.Logic;
 
 internal static class Map
 {

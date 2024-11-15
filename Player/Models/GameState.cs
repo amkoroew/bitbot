@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PlayerDotNet.Models;
+namespace Player.Models;
 
 public class GameState
 {
