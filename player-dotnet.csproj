@@ -18,10 +18,4 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="player-dotnet.Tests\obj\player-dotnet.Tests.csproj.nuget.dgspec.json" />
-    <_ContentIncludedByDefault Remove="player-dotnet.Tests\obj\project.assets.json" />
-    <_ContentIncludedByDefault Remove="player-dotnet.Tests\obj\project.packagespec.json" />
-  </ItemGroup>
-
 </Project>
