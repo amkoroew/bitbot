@@ -9,6 +9,10 @@ public class BaseUtils
         return bases[0];
     }
     
-    
+    public static Base[] GetMyBases(GameState gameState)
+    {
+        var myPlayerId = gameState.Game.Player;
+        return gameState.Bases.Where(b => b.Player == myPlayerId).ToArray();
+    }
     
 }
