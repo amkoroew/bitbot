@@ -4,7 +4,6 @@ namespace PlayerDotNet.Models
 {
     public class PathConfig
     {
-        
         [JsonProperty("grace_period")]
         public uint GracePeriod { get; set; }
         

@@ -4,7 +4,6 @@ namespace PlayerDotNet.Models
 {
     public class Game
     {
-        
         [JsonProperty("uid")]
         public uint Uid { get; set; }
         

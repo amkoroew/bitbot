@@ -7,7 +7,8 @@ namespace PlayerDotNet.Models
         [JsonProperty("src")]
         public uint Src { get; set; }
 
-        [JsonProperty("dest")] public uint Dest { get; set; }
+        [JsonProperty("dest")]
+        public uint Dest { get; set; }
 
         [JsonProperty("amount")]
         public uint Amount { get; set; }

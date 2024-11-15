@@ -4,7 +4,6 @@ namespace PlayerDotNet.Models
 {
     public class Position
     {
-        
         [JsonProperty("x")]
         public int X { get; set; }
         

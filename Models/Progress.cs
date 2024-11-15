@@ -4,7 +4,6 @@ namespace PlayerDotNet.Models
 {
     public class Progress
     {
-        
         [JsonProperty("distance")]
         public uint Distance { get; set; }
         
