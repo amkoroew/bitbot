@@ -9,6 +9,6 @@ public abstract class Strategy
         {
             Amount = x.Population,
             Source = x.Uid,
-            Destination = Map.GetNeighbours(x, gameState.Bases).First().Uid
+            Destination = Map.GetOwnNeighbours(gameState, x).Concat(Map.GetNeighbours(gameState, x)).First().Uid
         }).ToArray();
 }
