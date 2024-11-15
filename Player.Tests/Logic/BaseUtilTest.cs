@@ -1,5 +1,6 @@
 using FluentAssertions;
 using JetBrains.Annotations;
+using Newtonsoft.Json;
 using Player.Logic;
 using Player.Models;
 
@@ -87,5 +88,20 @@ public class BaseUtilTest
         Base base2 = BaseMother.Simple("Base2", 1, 1, 1);
 
         BaseUtils.GetBaseWithName([base1, base2], "Base2").Should().Be(base2);
+    }
+
+    [Fact]
+    public void GetMyBases_ShouldReturnBasesForCurrentPlayer()
+    {
+        var gameState =
+            JsonConvert.DeserializeObject<GameState>(
+                File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestGameState.json"))) ??
+            throw new InvalidOperationException();
+
+        // Act
+        var myBases = BaseUtils.GetMyBases(gameState);
+
+        // Assert
+        myBases.Should().HaveCount(2);
     }
 }

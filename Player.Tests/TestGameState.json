@@ -48,7 +48,32 @@
         "y": 3,
         "z": 0
       }
+    },
+    {
+      "uid": 4,
+      "player": 1,
+      "population": 3,
+      "level": 1,
+      "units_until_upgrade": 0,
+      "position": {
+        "x": 6,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "uid": 5,
+      "player": 1,
+      "population": 0,
+      "level": 0,
+      "units_until_upgrade": 0,
+      "position": {
+        "x": 9,
+        "y": 0,
+        "z": 0
+      }
     }
+    
   ],
   "config": {
     "base_levels": [
