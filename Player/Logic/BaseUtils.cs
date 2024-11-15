@@ -29,6 +29,11 @@ public class BaseUtils
         return bases.Where(i => i.Name == name).FirstOrDefault();
     }
 
+    public static int GetTotalPops(List<Base> bases)
+    {
+        return (int)bases.Sum(b => b.Population);
+    }
+
     public static Base[] GetMyBases(GameState gameState)
     {
         var myPlayerId = gameState.Game.Player;

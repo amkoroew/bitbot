@@ -89,6 +89,17 @@ public class BaseUtilTest
 
         BaseUtils.GetBaseWithName([base1, base2], "Base2").Should().Be(base2);
     }
+    
+    [Fact]
+    public void GetTotalPops()
+    {
+        Base base1 = BaseMother.Simple("Base1", 1, 1, 1);
+        base1.Population = 100;
+        Base base2 = BaseMother.Simple("Base2", 1, 1, 1);
+        base2.Population = 50;
+
+        BaseUtils.GetTotalPops([base1, base2]).Should().Be(150);
+    }
 
     [Fact]
     public void GetMyBases_ShouldReturnBasesForCurrentPlayer()
