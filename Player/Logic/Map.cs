@@ -4,8 +4,8 @@ namespace Player.Logic;
 
 internal static class Map
 {
-    internal static int CalculateDistanceBetweenBases(Base source, Base destination) =>
-        (int)Math.Sqrt(
+    internal static uint CalculateDistanceBetweenBases(Base source, Base destination) =>
+        (uint)Math.Sqrt(
             Math.Pow(Math.Abs(source.Position.X - destination.Position.X), 2) +
             Math.Pow(Math.Abs(source.Position.Y - destination.Position.Y), 2) +
             Math.Pow(Math.Abs(source.Position.Z - destination.Position.Z), 2));
