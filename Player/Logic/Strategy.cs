@@ -6,6 +6,6 @@ public abstract class Strategy
 {
     public static PlayerAction[] Decide(GameState gameState)
     {
-        return [new PlayerAction()];
+        return [];
     }
 }
