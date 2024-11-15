@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace PlayerDotNet.models
+namespace PlayerDotNet.Models
 {
     public class GameConfig
     {

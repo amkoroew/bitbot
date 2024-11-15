@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
 
-namespace PlayerDotNet.models
+namespace PlayerDotNet.Models
 {
     public class BaseLevel
     {
         
         [JsonProperty("max_population")]
-        public UInt32 MaxPopulation { get; set; }
+        public uint MaxPopulation { get; set; }
         
         [JsonProperty("upgrade_cost")]
-        public UInt32 UpgradeCost { get; set; }
+        public uint UpgradeCost { get; set; }
         
         [JsonProperty("spawn_rate")]
-        public UInt32 SpawnRate { get; set; }
+        public uint SpawnRate { get; set; }
     }
 }

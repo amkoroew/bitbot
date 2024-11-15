@@ -1,12 +1,11 @@
-﻿using PlayerDotNet.models;
+﻿using PlayerDotNet.Models;
 
-namespace PlayerDotNet.logic
+namespace PlayerDotNet.Logic
 {
     public abstract class Strategy
     {
         public static PlayerAction Decide(GameState? gameState)
         {
-            //TODO: Add your logic here!
             return new PlayerAction();
         }
     }

@@ -1,17 +1,17 @@
 ﻿using Newtonsoft.Json;
 
-namespace PlayerDotNet.models
+namespace PlayerDotNet.Models
 {
     public class Position
     {
         
         [JsonProperty("x")]
-        public Int32 X { get; set; }
+        public int X { get; set; }
         
         [JsonProperty("y")]
-        public Int32 Y { get; set; }
+        public int Y { get; set; }
         
         [JsonProperty("z")]
-        public Int32 Z { get; set; }
+        public int Z { get; set; }
     }
 }
