@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "player-dotnet", "player-dotnet.csproj", "{577970F2-425D-494E-B275-75F3ED956E8B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "player-dotnet.Tests", "player-dotnet.Tests\player-dotnet.Tests.csproj", "{CBDB2B18-2A02-452A-BA3F-EBAC1362EE29}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{577970F2-425D-494E-B275-75F3ED956E8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{577970F2-425D-494E-B275-75F3ED956E8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{577970F2-425D-494E-B275-75F3ED956E8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBDB2B18-2A02-452A-BA3F-EBAC1362EE29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBDB2B18-2A02-452A-BA3F-EBAC1362EE29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBDB2B18-2A02-452A-BA3F-EBAC1362EE29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBDB2B18-2A02-452A-BA3F-EBAC1362EE29}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
