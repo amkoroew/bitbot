@@ -1,22 +1,21 @@
 ﻿using Newtonsoft.Json;
 
-namespace PlayerDotNet.Models
+namespace PlayerDotNet.Models;
+
+public class Game
 {
-    public class Game
-    {
-        [JsonProperty("uid")]
-        public uint Uid { get; set; }
+    [JsonProperty("uid")]
+    public uint Uid { get; set; }
         
-        [JsonProperty("tick")]
-        public uint Tick { get; set; }
+    [JsonProperty("tick")]
+    public uint Tick { get; set; }
         
-        [JsonProperty("player_count")]
-        public uint PlayerCount { get; set; }
+    [JsonProperty("player_count")]
+    public uint PlayerCount { get; set; }
         
-        [JsonProperty("remaining_players")]
-        public uint RemainingPlayers { get; set; }
+    [JsonProperty("remaining_players")]
+    public uint RemainingPlayers { get; set; }
         
-        [JsonProperty("player")]
-        public uint Player { get; set; }
-    }
+    [JsonProperty("player")]
+    public uint Player { get; set; }
 }

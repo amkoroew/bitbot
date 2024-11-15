@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
 
-namespace PlayerDotNet.Models
-{
-    public class GameConfig
-    {
-        [JsonProperty("base_levels")]
-        public required List<BaseLevel> BaseLevels { get; set; }
+namespace PlayerDotNet.Models;
 
-        [JsonProperty("paths")]
-        public required PathConfig Paths { get; set; }
-    }
+public class GameConfig
+{
+    [JsonProperty("base_levels")]
+    public required List<BaseLevel> BaseLevels { get; set; }
+
+    [JsonProperty("paths")]
+    public required PathConfig Paths { get; set; }
 }

@@ -1,13 +1,12 @@
 ﻿using Newtonsoft.Json;
 
-namespace PlayerDotNet.Models
+namespace PlayerDotNet.Models;
+
+public class Progress
 {
-    public class Progress
-    {
-        [JsonProperty("distance")]
-        public uint Distance { get; set; }
+    [JsonProperty("distance")]
+    public uint Distance { get; set; }
         
-        [JsonProperty("traveled")]
-        public uint Traveled { get; set; }
-    }
+    [JsonProperty("traveled")]
+    public uint Traveled { get; set; }
 }
