@@ -4,8 +4,6 @@ EXPOSE 3000
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["Player/Player.csproj", "Player"]
-RUN dotnet restore "Player/Player.csproj"
 COPY . .
 RUN dotnet build "Player/Player.csproj" -c Release -o /app/build
 
