@@ -13,10 +13,10 @@ internal static class Map
     internal static List<Base> GetNeighbours(Base source, List<Base> bases) =>
         bases.OrderBy(x => CalculateDistanceBetweenBases(source, x)).Skip(1).ToList();
 
-    public static uint GetRemainingBitsAfterTravel(Base source, Base destination, PathConfig pathConfig,
-        uint numberBits)
-    {
-        var remainingDistance = CalculateDistanceBetweenBases(source, destination) - pathConfig.GracePeriod;
-        return (uint)(remainingDistance <= 0 ? numberBits : numberBits - (remainingDistance * pathConfig.DeathRate));
-    }
+    internal static uint CalculateMoveCost(Base source, Base destination, PathConfig pathConfig) =>
+        Math.Max(0,
+            (CalculateDistanceBetweenBases(source, destination) - pathConfig.GracePeriod) * pathConfig.DeathRate);
+
+    internal static uint CalculateAmountAfterMove(Base source, Base destination, PathConfig pathConfig, uint amount) =>
+        amount - CalculateMoveCost(source, destination, pathConfig);
 }
