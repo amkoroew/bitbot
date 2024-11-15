@@ -14,9 +14,14 @@
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
-    <PackageReference Include="xunit" Version="2.9.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.8.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.11.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="player-dotnet.Tests\obj\player-dotnet.Tests.csproj.nuget.dgspec.json" />
+    <_ContentIncludedByDefault Remove="player-dotnet.Tests\obj\project.assets.json" />
+    <_ContentIncludedByDefault Remove="player-dotnet.Tests\obj\project.packagespec.json" />
   </ItemGroup>
 
 </Project>
