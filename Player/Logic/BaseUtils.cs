@@ -26,7 +26,7 @@ public class BaseUtils
 
     public static Base GetBaseWithName(List<Base> bases, String name)
     {
-        return bases.Find(i => name.Equals(name));
+        return bases.Find(x => name.Equals(x.Name));
     }
 
     public static Base[] GetMyBases(GameState gameState)
