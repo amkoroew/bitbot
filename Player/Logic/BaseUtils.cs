@@ -46,4 +46,7 @@ public class BaseUtils
         if (source.Population + config.SpawnRate < config.MaxPopulation) return 0;
         return source.Population - config.MaxPopulation + config.SpawnRate;
     }
+
+    public static uint GetUpgradeCost(GameState gameState, Base source) => 
+        gameState.Config.BaseLevels[(int)source.Level].UpgradeCost;
 }
