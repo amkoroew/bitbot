@@ -47,6 +47,20 @@ internal static class Strategy
                     }
                 ];
             }
+            
+            if (BaseUtils.GetBaseLevel(gameState, own).MaxPopulation < BaseUtils.GetUpgradeCost(gameState, own))
+            {
+                Logger.LogInformation("partial upgrade");
+                return
+                [
+                    new PlayerAction
+                    {
+                        Amount = BaseUtils.GetSpareBits(gameState, own),
+                        Source = own.Uid,
+                        Destination = own.Uid
+                    }
+                ];
+            }
 
             Logger.LogInformation("wait");
             return [];

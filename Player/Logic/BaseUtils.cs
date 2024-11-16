@@ -53,5 +53,8 @@ public class BaseUtils
     }
 
     public static uint GetUpgradeCost(GameState gameState, Base source) =>
-        gameState.Config.BaseLevels[(int)source.Level].UpgradeCost;
+        GetBaseLevel(gameState, source).UpgradeCost - source.UnitsUntilUpgrade;
+    
+    public static BaseLevel GetBaseLevel(GameState gameState, Base source) =>
+        gameState.Config.BaseLevels[(int)source.Level];
 }
