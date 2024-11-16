@@ -1,0 +1,5 @@
+### Example state
+POST http://localhost:3000
+Content-Type: application/json
+
+< states/example.json

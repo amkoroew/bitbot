@@ -1,6 +1,3 @@
-POST http://localhost:3000
-Content-Type: application/json
-
 {
   "actions": [
     {
@@ -18,7 +15,8 @@ Content-Type: application/json
   "bases": [
     {
       "uid": 1,
-      "player": 1001,
+      "name": "test",
+      "player": 1,
       "population": 2,
       "level": 0,
       "units_until_upgrade": 0,
@@ -30,6 +28,7 @@ Content-Type: application/json
     },
     {
       "uid": 2,
+      "name": "another base!",
       "player": 0,
       "population": 7,
       "level": 1,
@@ -42,6 +41,7 @@ Content-Type: application/json
     },
     {
       "uid": 3,
+      "name": "one more",
       "player": 0,
       "population": 12,
       "level": 1,
@@ -51,32 +51,7 @@ Content-Type: application/json
         "y": 3,
         "z": 0
       }
-    },
-    {
-      "uid": 4,
-      "player": 1,
-      "population": 3,
-      "level": 1,
-      "units_until_upgrade": 0,
-      "position": {
-        "x": 6,
-        "y": 0,
-        "z": 0
-      }
-    },
-    {
-      "uid": 5,
-      "player": 1,
-      "population": 0,
-      "level": 0,
-      "units_until_upgrade": 0,
-      "position": {
-        "x": 9,
-        "y": 0,
-        "z": 0
-      }
     }
-
   ],
   "config": {
     "base_levels": [
