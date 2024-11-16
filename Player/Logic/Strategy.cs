@@ -4,21 +4,25 @@ namespace Player.Logic;
 
 internal static class Strategy
 {
-    public static ILogger Logger { get; } =
-        LoggerFactory.Create(config => { config.AddConsole(); }).CreateLogger("Program");
+    private static ILogger Logger { get; } =
+        LoggerFactory.Create(config => { config.AddSimpleConsole(options =>
+        {
+            options.IncludeScopes = true;
+            options.SingleLine = true;
+        }); }).CreateLogger("BitBot");
 
     public static PlayerAction[] Decide(GameState gameState)
     {
-        Logger.LogInformation("start game state evaluation");
         var ownBases = Map.GetOwnBases(gameState);
         if (ownBases.Count == 1)
         {
-            Logger.LogInformation("single base: start");
+            using var singleBaseScope= Logger.BeginScope("[single base]");
+            Logger.LogInformation("start");
             var own = ownBases.Single();
             var cheapest = Map.CalculateConquerCosts(gameState, own).First();
             if (cheapest.Cost < own.Population)
             {
-                Logger.LogInformation("single base: attack");
+                Logger.LogInformation("attack");
                 return
                 [
                     new PlayerAction
@@ -31,7 +35,7 @@ internal static class Strategy
             }
             if (BaseUtils.GetUpgradeCost(gameState, own) < own.Population)
             {
-                Logger.LogInformation("single base: upgrade");
+                Logger.LogInformation("upgrade");
                 return
                 [
                     new PlayerAction
@@ -43,11 +47,12 @@ internal static class Strategy
                 ];
             }
 
-            Logger.LogInformation("single base: wait");
+            Logger.LogInformation("wait");
             return [];
         }
 
-        Logger.LogInformation("multiple bases");
+        using var multipleBasesScope = Logger.BeginScope("[multiple bases]");
+        Logger.LogInformation("start");
         
         return ownBases.Select(x =>
         {
