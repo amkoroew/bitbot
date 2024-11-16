@@ -10,16 +10,16 @@ public abstract class Strategy
         if (ownBases.Count == 1)
         {
             var own = ownBases.Single();
-            var foreignNeighbours = Map.GetForeignNeighbours(gameState, own);
-            if (foreignNeighbours.Count != 0)
+            var cheapest = Map.CalculateConquerCosts(gameState, own).First();
+            if (cheapest.Cost < own.Population)
             {
                 return
                 [
                     new PlayerAction
                     {
-                        Amount = own.Population - 1,
+                        Amount = cheapest.Cost,
                         Source = own.Uid,
-                        Destination = foreignNeighbours.First().Uid
+                        Destination = cheapest.Destination.Uid
                     }
                 ];
             }

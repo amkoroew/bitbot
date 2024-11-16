@@ -40,9 +40,15 @@ internal static class Map
             .ToList();
     }
 
+    private static uint PredictPopulation(GameState gameState, Base @base, uint ticks)
+    {
+        var config = gameState.Config.BaseLevels[(int)@base.Level];
+        return @base.Population + config.SpawnRate * ticks;
+    }
+
     private static uint CalculateConquerCost(GameState gameState, Base source, Base destination)
     {
-        return CalculateMoveCost(source, destination, gameState.Config.Paths) + destination.Population + 1;
+        return CalculateMoveCost(source, destination, gameState.Config.Paths) + PredictPopulation(gameState, destination, CalculateDistanceBetweenBases(source, destination)) + 1;
     }
     
     internal static uint CalculateNeededBitsToReachDestinationWithRemainingNumber(Base source, Base destination, PathConfig pathConfig, uint amount) =>

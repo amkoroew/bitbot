@@ -18,8 +18,9 @@ public class Attack
     }
 
 
-    public static List<PossibleTargets> GetPossibleTargets(GameState gameState, PathConfig pathConfig)
+    public static List<PossibleTargets> GetPossibleTargets(GameState gameState)
     {
+        var pathConfig = gameState.Config.Paths;
         List<PossibleTargets> possibleTargets = new List<PossibleTargets>();
         foreach (Base ourBase in Map.GetOwnBases(gameState))
         {
