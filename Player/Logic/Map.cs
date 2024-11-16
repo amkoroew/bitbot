@@ -43,7 +43,7 @@ internal static class Map
     private static uint PredictPopulation(GameState gameState, Base @base, uint ticks)
     {
         var config = gameState.Config.BaseLevels[(int)@base.Level];
-        return @base.Population + config.SpawnRate * ticks;
+        return @base.Player == 0 ? @base.Population : Math.Min(config.MaxPopulation + config.SpawnRate, @base.Population + config.SpawnRate * ticks);
     }
 
     private static uint CalculateConquerCost(GameState gameState, Base source, Base destination)
