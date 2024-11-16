@@ -5,17 +5,8 @@ using static Newtonsoft.Json.JsonConvert;
 
 var app = WebApplication.Create(args);
 
-var logger = LoggerFactory.Create(config => { config.AddConsole(); }).CreateLogger("Program");
-
 app.MapPost("/", (JsonElement gameState) =>
-{
-    logger.LogInformation("=== thinking started ===");
-    var actions = Strategy.Decide(DeserializeObject<GameState>(gameState.GetRawText()) ??
-                                  throw new InvalidOperationException());
-    logger.LogInformation(SerializeObject(actions));
-    logger.LogInformation("=== thinking completed ===");
-    return actions;
-});
+    Strategy.Decide(DeserializeObject<GameState>(gameState.GetRawText()) ?? throw new InvalidOperationException()));
 
 app.MapGet("/", () => "\ud83d\udcff.bitbotΔƛΩπ");
 
