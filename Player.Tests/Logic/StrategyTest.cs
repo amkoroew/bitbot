@@ -10,9 +10,9 @@ namespace Player.Tests.Logic;
 public class StrategyTest
 {
     [Fact]
-    public void Idle()
+    public void SmokeTest()
     {
         var gameState = JsonConvert.DeserializeObject<GameState>(File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestGameState.json"))) ?? throw new InvalidOperationException();
-        Strategy.Decide(gameState).Should().BeEmpty();
+        Strategy.Decide(gameState).Should().NotBeEmpty();
     }
 }

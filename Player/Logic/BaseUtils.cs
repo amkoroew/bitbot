@@ -39,4 +39,11 @@ public class BaseUtils
         var myPlayerId = gameState.Game.Player;
         return gameState.Bases.Where(b => b.Player == myPlayerId).ToArray();
     }
+
+    public static uint GetSpareBits(GameState gameState, Base source)
+    {
+        var config = gameState.Config.BaseLevels[(int)source.Level];
+        if (source.Population + config.SpawnRate < config.MaxPopulation) return 0;
+        return source.Population - config.MaxPopulation + config.SpawnRate;
+    }
 }

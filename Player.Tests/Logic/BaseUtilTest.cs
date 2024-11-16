@@ -115,4 +115,26 @@ public class BaseUtilTest
         // Assert
         myBases.Should().HaveCount(2);
     }
+
+    [Fact]
+    public void GetSpareBits_ShouldReturnSpareBits()
+    {
+        var gameState =
+            JsonConvert.DeserializeObject<GameState>(
+                File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestGameState.json"))) ??
+            throw new InvalidOperationException();
+        
+        BaseUtils.GetSpareBits(gameState, gameState.Bases[0]).Should().Be(69);
+    }
+    
+    [Fact]
+    public void GetSpareBits_ShouldReturnNoSpareBits()
+    {
+        var gameState =
+            JsonConvert.DeserializeObject<GameState>(
+                File.ReadAllText(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "TestGameState.json"))) ??
+            throw new InvalidOperationException();
+        
+        BaseUtils.GetSpareBits(gameState, gameState.Bases[1]).Should().Be(0);
+    }
 }
