@@ -13,6 +13,7 @@ internal static class Strategy
 
     public static PlayerAction[] Decide(GameState gameState)
     {
+        using var tickScope = Logger.BeginScope($"[{gameState.Game.Tick}]");
         var ownBases = Map.GetOwnBases(gameState);
         if (ownBases.Count == 1)
         {
