@@ -7,8 +7,6 @@ var app = WebApplication.Create(args);
 
 var logger = LoggerFactory.Create(config => { config.AddConsole(); }).CreateLogger("Program");
 
-app.Urls.Add("http://*:3000");
-
 app.MapPost("/", (JsonElement gameState) =>
 {
     logger.LogInformation("=== thinking started ===");
