@@ -35,6 +35,8 @@ public abstract class Strategy
                     }
                 ];
             }
+
+            return [];
         }
 
         return ownBases.Select(x =>
