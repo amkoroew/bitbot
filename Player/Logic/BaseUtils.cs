@@ -29,6 +29,11 @@ public class BaseUtils
         return bases.Where(i => i.Name == name).FirstOrDefault();
     }
 
+    public static int GetBaseSpawnRate(Base source, GameState gameState)
+    {
+        return (int)gameState.Config.BaseLevels[(int)source.Level].SpawnRate;
+    }
+
     public static int GetTotalPops(List<Base> bases)
     {
         return (int)bases.Sum(b => b.Population);
@@ -47,6 +52,6 @@ public class BaseUtils
         return source.Population - config.MaxPopulation + config.SpawnRate;
     }
 
-    public static uint GetUpgradeCost(GameState gameState, Base source) => 
+    public static uint GetUpgradeCost(GameState gameState, Base source) =>
         gameState.Config.BaseLevels[(int)source.Level].UpgradeCost;
 }

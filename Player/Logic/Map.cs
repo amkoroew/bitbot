@@ -13,6 +13,9 @@ internal static class Map
     internal static List<Base> GetOwnBases(GameState gameState) =>
         gameState.Bases.Where(x => x.Player == gameState.Game.Player).ToList();
     
+    internal static List<Base> GetOtherBases(GameState gameState) =>
+        gameState.Bases.Where(x => x.Player != gameState.Game.Player).ToList();
+
     internal static List<Base> GetForeignBases(GameState gameState) =>
         gameState.Bases.Where(x => x.Player != gameState.Game.Player).ToList();
 
@@ -41,4 +44,7 @@ internal static class Map
     {
         return CalculateMoveCost(source, destination, gameState.Config.Paths) + destination.Population + 1;
     }
+    
+    internal static uint CalculateNeededBitsToReachDestinationWithRemainingNumber(Base source, Base destination, PathConfig pathConfig, uint amount) =>
+        CalculateMoveCost(source, destination, pathConfig) + amount;
 }
